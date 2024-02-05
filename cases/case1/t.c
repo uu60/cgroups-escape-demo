@@ -15,7 +15,7 @@ static int __init exception_init(void) {
     envp[1] = "PATH=/sbin:/bin:/usr/sbin:/usr/bin";
     envp[2] = NULL;
 
-    while (true) {
+    while (1) {
         printk("call_usermodehelper module isstarting..!\n");
         ret = call_usermodehelper(path, argv, envp, UMH_WAIT_PROC);
         printk("ret=%d\n", ret);
