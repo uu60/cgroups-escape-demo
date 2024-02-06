@@ -77,12 +77,19 @@ Segmentation fault (core dumped)
 <br>`sudo apt-get install docker-ce docker-ce-cli containerd.io`
 2. Use **Dockerfile** to build an image (execute below shell in the same directory as Dockerfile).
 <br>`docker build -t docker-cli-container .`
-3. Run the container.
-<br>`docker run -it --rm --privileged  -d docker-cli-container`
-4. Enter the container shell.
-<br>`docker exec -it [container id] /bin/bash`
-<br>Container id can be queried by `docker ps -a`.
-5. Execute the **workload.sh** in the container to stimulate the workload to Docker engine.
+3. Run and enter the container.
+<br>`docker run -it --rm basic-container`
+4. Execute the **workload.sh** in the container to simulate the workload to Docker engine.
 
-
-> According to Internet and ChatGPT
+## Case 5: Softirq Handling
+### Introduction and Execute
+Use `fio` to simulate BLOCK softirq.
+1. Enter the above container.
+2. First install fio.
+    ```shell
+    apt-get update
+    apt-get install fio
+    ```
+3. Execute `fio test.fio`
+---
+According to Internet and ChatGPT.

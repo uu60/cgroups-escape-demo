@@ -1,0 +1,13 @@
+[global]
+ioengine=libaio
+direct=1
+size=100M
+filename=fio_test_file
+
+[sequential-write]
+rw=write
+bs=4k
+
+[sequential-read]
+rw=read
+bs=4k

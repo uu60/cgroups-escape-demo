@@ -1,5 +1,8 @@
-FROM docker:latest
+FROM ubuntu:20.04
 
-RUN echo "http://dl-cdn.alpinelinux.org/alpine/v3.14/main" > /etc/apk/repositories
+RUN apt-get update && \
+    apt-get install -y kmod && \
+    rm -rf /var/lib/apt/lists/*
 
-RUN apk add --no-cache bash coreutils
+CMD ["bash"]
+
