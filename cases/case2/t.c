@@ -12,7 +12,6 @@ void simulate_io_operations() {
     FILE *fp;
     char filename[100];
     sprintf(filename, "%s%d", "temp", rand());
-    printf("%s", filename);
 
     // Open file. If not existed, create.
     fp = fopen(filename, "ab");
